@@ -31,7 +31,13 @@ Use arrow keys to navigate, `Enter` to run, or press `1-9` for quick selection.
 
 ## Installation
 
-### From crates.io (Recommended)
+### Homebrew (macOS & Linux) - Recommended
+
+```bash
+brew install tx2z/tap/nrs
+```
+
+### Cargo (Windows & all platforms)
 
 ```bash
 cargo install npm-run-scripts
@@ -41,15 +47,6 @@ cargo install npm-run-scripts
 
 ```bash
 cargo install --git https://github.com/tx2z/nrs
-```
-
-### Manual Build
-
-```bash
-git clone https://github.com/tx2z/nrs
-cd nrs
-cargo build --release
-cp target/release/nrs ~/.local/bin/
 ```
 
 ### Shell Completions
