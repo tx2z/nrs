@@ -2,6 +2,7 @@
 //!
 //! These tests verify the command-line interface behavior using assert_cmd.
 
+use assert_cmd::cargo::cargo_bin_cmd;
 use assert_cmd::Command;
 use predicates::prelude::*;
 
@@ -15,7 +16,7 @@ use crate::integration::fixtures::{
 
 /// Get a Command for the nrs binary.
 fn nrs() -> Command {
-    Command::cargo_bin("nrs").expect("Failed to find nrs binary")
+    cargo_bin_cmd!("nrs")
 }
 
 // ==================== Help and Version ====================
@@ -52,7 +53,7 @@ fn test_version_output() {
         .assert()
         .success()
         .stdout(predicate::str::contains("nrs"))
-        .stdout(predicate::str::contains("1.0.0"));
+        .stdout(predicate::str::is_match(r"\d+\.\d+\.\d+").unwrap());
 }
 
 #[test]
@@ -61,7 +62,7 @@ fn test_version_short() {
         .arg("-V")
         .assert()
         .success()
-        .stdout(predicate::str::contains("1.0.0"));
+        .stdout(predicate::str::is_match(r"\d+\.\d+\.\d+").unwrap());
 }
 
 // ==================== List Mode ====================

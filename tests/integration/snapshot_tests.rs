@@ -2,6 +2,7 @@
 //!
 //! These tests capture and verify the output format of various commands.
 
+use assert_cmd::cargo::cargo_bin_cmd;
 use assert_cmd::Command;
 
 use crate::integration::fixtures::{
@@ -10,7 +11,7 @@ use crate::integration::fixtures::{
 
 /// Get a Command for the nrs binary.
 fn nrs() -> Command {
-    Command::cargo_bin("nrs").expect("Failed to find nrs binary")
+    cargo_bin_cmd!("nrs")
 }
 
 // ==================== Help Output Snapshots ====================

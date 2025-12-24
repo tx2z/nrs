@@ -2,7 +2,7 @@
 
 use npm_run_scripts::config::{AppearanceConfig, Config, ExcludeConfig};
 
-use crate::integration::fixtures::{create_project, create_project_with_config, standard_scripts};
+use crate::integration::fixtures::{create_project_with_config, standard_scripts};
 
 // ==================== Config Defaults ====================
 
