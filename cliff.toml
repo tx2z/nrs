@@ -14,10 +14,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 """
 # Template for the changelog body
 body = """
-{%- macro remote_url() -%}
-  https://github.com/tx2z/nrs
-{%- endmacro -%}
-
 {% if version -%}
 ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
 {% else -%}
@@ -27,9 +23,7 @@ body = """
 {% for group, commits in commits | group_by(attribute="group") %}
 ### {{ group | striptags | trim | upper_first }}
 {% for commit in commits %}
-- {{ commit.message | upper_first | trim }}\
-{% if commit.github.username %} by @{{ commit.github.username }}{%- endif %}\
-{% if commit.github.pr_number %} in [#{{ commit.github.pr_number }}]({{ self::remote_url() }}/pull/{{ commit.github.pr_number }}){%- endif %}
+- {{ commit.message | upper_first | trim }}
 {%- endfor %}
 {% endfor %}
 """
@@ -38,13 +32,13 @@ footer = """
 {% for release in releases -%}
     {% if release.version -%}
         {% if release.previous.version -%}
-[{{ release.version | trim_start_matches(pat="v") }}]: {{ self::remote_url() }}/compare/{{ release.previous.version }}...{{ release.version }}
+[{{ release.version | trim_start_matches(pat="v") }}]: https://github.com/tx2z/nrs/compare/{{ release.previous.version }}...{{ release.version }}
         {% else -%}
-[{{ release.version | trim_start_matches(pat="v") }}]: {{ self::remote_url() }}/releases/tag/{{ release.version }}
+[{{ release.version | trim_start_matches(pat="v") }}]: https://github.com/tx2z/nrs/releases/tag/{{ release.version }}
         {% endif -%}
     {% else -%}
         {% if release.previous.version -%}
-[Unreleased]: {{ self::remote_url() }}/compare/{{ release.previous.version }}...HEAD
+[Unreleased]: https://github.com/tx2z/nrs/compare/{{ release.previous.version }}...HEAD
         {% endif -%}
     {% endif -%}
 {% endfor %}
@@ -85,7 +79,5 @@ protect_breaking_commits = false
 filter_commits = false
 # Tag pattern for releases
 tag_pattern = "v[0-9].*"
-# Skip tags that match this pattern (for pre-releases)
-# skip_tags = "v.*-.*"
 # Sort commits within each group
 sort_commits = "oldest"
