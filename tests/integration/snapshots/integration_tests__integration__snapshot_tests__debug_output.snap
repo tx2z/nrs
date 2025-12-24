@@ -3,7 +3,7 @@ source: tests/integration/snapshot_tests.rs
 expression: normalized
 ---
 === nrs debug mode ===
-Version: 0.1.0
+Version: 1.0.0
 
 Debug: CLI arguments = Cli {
     path: None,

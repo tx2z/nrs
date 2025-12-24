@@ -4,7 +4,7 @@ This file provides guidance for Claude Code when working on this project.
 
 ## Project Overview
 
-**nrs** (Node Run Scripts) is a fast, interactive TUI for running npm scripts. Written in Rust, it provides a visual interface for discovering and executing scripts from `package.json` files.
+**nrs** (npm Run Scripts) is a fast, interactive TUI for running npm scripts. Written in Rust, it provides a visual interface for discovering and executing scripts from `package.json` files.
 
 ## Development Commands
 

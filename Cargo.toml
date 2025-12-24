@@ -1,5 +1,5 @@
 [package]
-name = "nrs"
+name = "npm-run-scripts"
 version = "1.0.0"
 edition = "2021"
 rust-version = "1.70"

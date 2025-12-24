@@ -90,7 +90,7 @@ fn parse_comment_key(key: &str) -> Option<String> {
 /// # Examples
 ///
 /// ```
-/// use nrs::package::{Script, get_description};
+/// use npm_run_scripts::package::{Script, get_description};
 ///
 /// let script = Script::with_description("dev", "vite", "Start dev server");
 /// assert_eq!(get_description(&script), "Start dev server");

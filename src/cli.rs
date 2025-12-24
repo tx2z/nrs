@@ -5,7 +5,7 @@
 //! # Example
 //!
 //! ```no_run
-//! use nrs::cli::Cli;
+//! use npm_run_scripts::cli::Cli;
 //!
 //! let cli = Cli::parse_args();
 //! println!("Project dir: {:?}", cli.project_dir());

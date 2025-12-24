@@ -5,7 +5,7 @@
 
 use std::fs;
 
-use nrs::package::{detect_runner, detect_runner_reason, Runner};
+use npm_run_scripts::package::{detect_runner, detect_runner_reason, Runner};
 
 use crate::integration::fixtures::{
     create_project, create_project_with_lockfile, create_project_with_package_manager,

@@ -2,7 +2,7 @@
 
 ## Quick Start Guide
 
-Welcome! This folder contains everything you need to develop **nrs** (Node Run Scripts), a fast Rust TUI for running npm scripts.
+Welcome! This folder contains everything you need to develop **nrs** (npm Run Scripts), a fast Rust TUI for running npm scripts.
 
 ---
 

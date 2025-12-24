@@ -1,4 +1,4 @@
-# nrs - Node Run Scripts
+# nrs - npm Run Scripts
 
 ## Technical Specification Document
 
@@ -32,7 +32,7 @@
 
 ### 1.1 Purpose
 
-`nrs` (Node Run Scripts) is a fast, interactive terminal user interface (TUI) for discovering and executing npm/yarn/pnpm/bun scripts defined in `package.json` files.
+`nrs` (npm Run Scripts) is a fast, interactive terminal user interface (TUI) for discovering and executing npm/yarn/pnpm/bun scripts defined in `package.json` files.
 
 ### 1.2 Goals
 

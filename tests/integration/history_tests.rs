@@ -4,8 +4,8 @@ use std::fs;
 use std::path::PathBuf;
 
 use chrono::Utc;
-use nrs::config::HistoryConfig;
-use nrs::history::History;
+use npm_run_scripts::config::HistoryConfig;
+use npm_run_scripts::history::History;
 use tempfile::TempDir;
 
 /// Create a temporary history file location.

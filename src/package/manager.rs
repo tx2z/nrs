@@ -56,7 +56,7 @@ impl Runner {
     /// # Examples
     ///
     /// ```
-    /// use nrs::package::Runner;
+    /// use npm_run_scripts::package::Runner;
     ///
     /// let cmd = Runner::Npm.run_command("dev");
     /// assert_eq!(cmd, vec!["npm", "run", "dev"]);
@@ -83,7 +83,7 @@ impl Runner {
     /// # Examples
     ///
     /// ```
-    /// use nrs::package::Runner;
+    /// use npm_run_scripts::package::Runner;
     ///
     /// let args = vec!["--watch".to_string(), "--coverage".to_string()];
     /// let cmd = Runner::Npm.run_command_with_args("test", &args);
@@ -108,7 +108,7 @@ impl Runner {
     /// # Examples
     ///
     /// ```
-    /// use nrs::package::Runner;
+    /// use npm_run_scripts::package::Runner;
     ///
     /// assert_eq!(Runner::Npm.format_command("dev"), "npm run dev");
     /// assert_eq!(Runner::Yarn.format_command("build"), "yarn build");
@@ -122,7 +122,7 @@ impl Runner {
     /// # Examples
     ///
     /// ```
-    /// use nrs::package::Runner;
+    /// use npm_run_scripts::package::Runner;
     ///
     /// let args = vec!["--watch".to_string()];
     /// assert_eq!(
@@ -290,7 +290,7 @@ impl std::str::FromStr for Runner {
 ///
 /// ```no_run
 /// use std::path::Path;
-/// use nrs::package::detect_runner;
+/// use npm_run_scripts::package::detect_runner;
 ///
 /// let runner = detect_runner(Path::new("/path/to/project"));
 /// println!("Using: {}", runner);
@@ -312,7 +312,7 @@ pub fn detect_runner(project_dir: &Path) -> Runner {
 ///
 /// ```no_run
 /// use std::path::Path;
-/// use nrs::package::detect_runner_reason;
+/// use npm_run_scripts::package::detect_runner_reason;
 ///
 /// let (runner, reason) = detect_runner_reason(Path::new("/path/to/project"));
 /// println!("Using: {} ({})", runner, reason);

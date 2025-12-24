@@ -62,7 +62,7 @@ pub fn parse_package_json(content: &str) -> Result<Package> {
 /// # Examples
 ///
 /// ```
-/// use nrs::package::scripts::parse_scripts_from_json;
+/// use npm_run_scripts::package::scripts::parse_scripts_from_json;
 ///
 /// let json = r#"{"scripts": {"dev": "vite", "build": "vite build"}}"#;
 /// let scripts = parse_scripts_from_json(json).unwrap();

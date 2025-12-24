@@ -1,8 +1,8 @@
-# nrs - Node Run Scripts
+# nrs - npm Run Scripts
 
 A fast, interactive TUI for running npm scripts.
 
-![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Rust](https://img.shields.io/badge/rust-1.70+-orange)
 
@@ -31,7 +31,13 @@ Use arrow keys to navigate, `Enter` to run, or press `1-9` for quick selection.
 
 ## Installation
 
-### From Source (Cargo)
+### From crates.io (Recommended)
+
+```bash
+cargo install npm-run-scripts
+```
+
+### From Source
 
 ```bash
 cargo install --git https://github.com/tx2z/nrs

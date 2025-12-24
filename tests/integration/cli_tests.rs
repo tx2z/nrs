@@ -52,7 +52,7 @@ fn test_version_output() {
         .assert()
         .success()
         .stdout(predicate::str::contains("nrs"))
-        .stdout(predicate::str::contains("0.1.0"));
+        .stdout(predicate::str::contains("1.0.0"));
 }
 
 #[test]
@@ -61,7 +61,7 @@ fn test_version_short() {
         .arg("-V")
         .assert()
         .success()
-        .stdout(predicate::str::contains("0.1.0"));
+        .stdout(predicate::str::contains("1.0.0"));
 }
 
 // ==================== List Mode ====================

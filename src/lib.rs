@@ -1,4 +1,4 @@
-//! nrs - Node Run Scripts
+//! nrs - npm Run Scripts
 //!
 //! A fast, interactive terminal user interface (TUI) for discovering
 //! and executing npm/yarn/pnpm/bun scripts defined in `package.json` files.
@@ -26,7 +26,7 @@
 //! # Example
 //!
 //! ```no_run
-//! use nrs::package::{parse_scripts, detect_runner, Runner};
+//! use npm_run_scripts::package::{parse_scripts, detect_runner, Runner};
 //! use std::path::Path;
 //!
 //! // Parse scripts from a project

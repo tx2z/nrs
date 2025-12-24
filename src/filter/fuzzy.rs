@@ -116,8 +116,8 @@ impl Default for FuzzyMatcher {
 /// # Examples
 ///
 /// ```
-/// use nrs::package::Script;
-/// use nrs::filter::filter_scripts;
+/// use npm_run_scripts::package::Script;
+/// use npm_run_scripts::filter::filter_scripts;
 ///
 /// let scripts = vec![
 ///     Script::new("dev", "vite"),
@@ -213,7 +213,7 @@ pub fn filter_scripts_with_matcher<'a>(
 /// # Examples
 ///
 /// ```
-/// use nrs::filter::get_match_indices;
+/// use npm_run_scripts::filter::get_match_indices;
 ///
 /// let indices = get_match_indices("bd", "build");
 /// assert_eq!(indices, vec![0, 4]); // 'b' at 0, 'd' at 4

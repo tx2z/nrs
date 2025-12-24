@@ -1,6 +1,6 @@
 //! Integration tests for package.json parsing using fixtures.
 
-use nrs::package::{
+use npm_run_scripts::package::{
     get_description, parse_package_json, parse_scripts_from_json, parse_scripts_required,
 };
 

@@ -1,8 +1,8 @@
 //! Benchmarks for script filtering performance.
 
 use criterion::{black_box, criterion_group, criterion_main, BenchmarkId, Criterion};
-use nrs::filter::filter_scripts;
-use nrs::package::Script;
+use npm_run_scripts::filter::filter_scripts;
+use npm_run_scripts::package::Script;
 
 /// Generate a vector of test scripts.
 fn generate_scripts(count: usize) -> Vec<Script> {
