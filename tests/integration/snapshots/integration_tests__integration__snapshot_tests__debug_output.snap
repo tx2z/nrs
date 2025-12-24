@@ -1,0 +1,37 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: normalized
+---
+=== nrs debug mode ===
+Version: 0.1.0
+
+Debug: CLI arguments = Cli {
+    path: None,
+    last: false,
+    list: true,
+    exclude: [],
+    sort: None,
+    runner: None,
+    args: None,
+    script: None,
+    dry_run: false,
+    config: None,
+    no_config: false,
+    debug: true,
+    completions: None,
+}
+Debug: Project directory = <PATH>
+Debug: File locations:
+  History file: <PATH> Support<PATH> (exists: true)
+  Global config: <PATH> Support<PATH> (exists: false)
+  Local config: <PATH> (exists: false)
+  package.json: <PATH> (exists: true)
+
+Debug: Package manager = npm (default (no lock file found))
+Debug: Found 5 scripts
+Debug: Scripts found:
+  build = vite build
+  dev = vite
+  format = prettier --write .
+  lint = eslint .
+  test = vitest

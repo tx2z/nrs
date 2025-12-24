@@ -1,0 +1,10 @@
+{
+  "name": "basic-project",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "lint": "eslint ."
+  }
+}

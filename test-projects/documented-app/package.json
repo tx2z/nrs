@@ -1,0 +1,33 @@
+{
+  "name": "documented-app",
+  "version": "1.0.0",
+  "description": "An app with script descriptions for testing description display",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write src/",
+    "typecheck": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build"
+  },
+  "scripts-info": {
+    "dev": "Start Vite development server with HMR",
+    "build": "Build optimized production bundle",
+    "preview": "Preview production build locally",
+    "test": "Run unit tests with Vitest",
+    "test:ui": "Run tests with interactive UI",
+    "test:coverage": "Run tests and generate coverage report",
+    "lint": "Check code for ESLint errors",
+    "lint:fix": "Auto-fix ESLint errors where possible",
+    "format": "Format code with Prettier",
+    "typecheck": "Run TypeScript type checking",
+    "storybook": "Start Storybook development server",
+    "build:storybook": "Build static Storybook site"
+  }
+}

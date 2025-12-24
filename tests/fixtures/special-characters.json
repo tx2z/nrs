@@ -1,0 +1,16 @@
+{
+  "name": "special-chars-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "test:unit": "jest --testPathPattern=unit",
+    "test:integration": "jest --testPathPattern=integration",
+    "test:e2e": "playwright test",
+    "lint:fix": "eslint --fix .",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "prisma db seed",
+    "docker:build": "docker build -t myapp .",
+    "docker:run": "docker run -p 3000:3000 myapp"
+  }
+}

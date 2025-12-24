@@ -1,0 +1,71 @@
+.ie \n(.g .ds Aq \(aq
+.el .ds Aq '
+.TH nrs 1  "nrs 0.1.0" 
+.SH NAME
+nrs \- Fast interactive TUI for running npm scripts
+.SH SYNOPSIS
+\fBnrs\fR [\fB\-L\fR|\fB\-\-last\fR] [\fB\-l\fR|\fB\-\-list\fR] [\fB\-e\fR|\fB\-\-exclude\fR] [\fB\-s\fR|\fB\-\-sort\fR] [\fB\-r\fR|\fB\-\-runner\fR] [\fB\-a\fR|\fB\-\-args\fR] [\fB\-n\fR|\fB\-\-script\fR] [\fB\-d\fR|\fB\-\-dry\-run\fR] [\fB\-c\fR|\fB\-\-config\fR] [\fB\-\-no\-config\fR] [\fB\-\-debug\fR] [\fB\-\-completions\fR] [\fB\-h\fR|\fB\-\-help\fR] [\fB\-V\fR|\fB\-\-version\fR] [\fIPATH\fR] 
+.SH DESCRIPTION
+nrs is a fast, interactive terminal user interface (TUI) for discovering and executing npm/yarn/pnpm/bun scripts defined in package.json files.
+.PP
+Run without arguments to launch the interactive TUI. Use arrow keys to navigate, Enter to run a script, or press 1\-9 for quick selection.
+.SH OPTIONS
+.TP
+\fB\-L\fR, \fB\-\-last\fR
+Rerun last executed script (no TUI)
+.TP
+\fB\-l\fR, \fB\-\-list\fR
+List scripts non\-interactively (no TUI)
+.TP
+\fB\-e\fR, \fB\-\-exclude\fR \fI<PATTERN>\fR
+Exclude scripts matching pattern (can be repeated)
+.TP
+\fB\-s\fR, \fB\-\-sort\fR \fI<MODE>\fR
+Initial sort mode
+.br
+
+.br
+[\fIpossible values: \fRrecent, alpha, category]
+.TP
+\fB\-r\fR, \fB\-\-runner\fR \fI<RUNNER>\fR
+Override package manager
+.br
+
+.br
+[\fIpossible values: \fRnpm, yarn, pnpm, bun]
+.TP
+\fB\-a\fR, \fB\-\-args\fR \fI<ARGS>\fR
+Arguments to pass to the selected script
+.TP
+\fB\-n\fR, \fB\-\-script\fR \fI<NAME>\fR
+Run script directly without TUI
+.TP
+\fB\-d\fR, \fB\-\-dry\-run\fR
+Show command without executing
+.TP
+\fB\-c\fR, \fB\-\-config\fR \fI<PATH>\fR
+Path to config file
+.TP
+\fB\-\-no\-config\fR
+Ignore config files
+.TP
+\fB\-\-debug\fR
+Enable debug output
+.TP
+\fB\-\-completions\fR \fI<SHELL>\fR
+Generate shell completions
+.br
+
+.br
+[\fIpossible values: \fRbash, zsh, fish, powershell, elvish]
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Print help (see a summary with \*(Aq\-h\*(Aq)
+.TP
+\fB\-V\fR, \fB\-\-version\fR
+Print version
+.TP
+[\fIPATH\fR]
+Path to project directory (default: current directory)
+.SH VERSION
+v0.1.0

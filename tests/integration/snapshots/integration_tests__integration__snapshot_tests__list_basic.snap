@@ -1,0 +1,13 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: normalized
+---
+Available scripts (npm):
+
+  build   vite build
+  dev     vite
+  format  prettier --write .
+  lint    eslint .
+  test    vitest
+
+5 scripts found

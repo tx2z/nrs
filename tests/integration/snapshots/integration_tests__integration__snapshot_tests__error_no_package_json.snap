@@ -1,0 +1,5 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: normalized
+---
+Error: No package.json found in <TEMP_PATH> or any parent directory (searched up to 10 levels)

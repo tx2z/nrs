@@ -1,0 +1,24 @@
+{
+  "name": "monorepo-project",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@8.15.0",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "format": "prettier --write ."
+  },
+  "scripts-info": {
+    "dev": "Start all packages in development mode",
+    "build": "Build all packages",
+    "test": "Run tests in all packages",
+    "lint": "Lint all packages",
+    "format": "Format all files with Prettier"
+  }
+}

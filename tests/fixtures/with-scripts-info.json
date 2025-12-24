@@ -1,0 +1,20 @@
+{
+  "name": "project-with-scripts-info",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build --mode production",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint src/",
+    "format": "prettier --write ."
+  },
+  "scripts-info": {
+    "dev": "Start development server with hot reload",
+    "build": "Build optimized production bundle",
+    "test": "Run tests once",
+    "test:watch": "Run tests in watch mode",
+    "lint": "Check code for linting errors",
+    "format": "Format all source files"
+  }
+}

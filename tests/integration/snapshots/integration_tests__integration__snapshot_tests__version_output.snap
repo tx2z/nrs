@@ -1,0 +1,5 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: stdout
+---
+nrs 0.1.0

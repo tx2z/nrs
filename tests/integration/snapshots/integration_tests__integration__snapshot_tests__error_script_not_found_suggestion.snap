@@ -1,0 +1,16 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: stderr
+---
+Error: Script 'devv' not found
+
+Did you mean: 'dev', 'test'?
+
+Run 'nrs --list' to see all available scripts.
+
+Available scripts:
+  build
+  dev
+  format
+  lint
+  test

@@ -1,0 +1,13 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: normalized
+---
+Error: No scripts defined in package.json at <TEMP_PATH>
+
+Tip: Add scripts to your package.json:
+  {
+    "scripts": {
+      "dev": "your-command",
+      "build": "your-build-command"
+    }
+  }

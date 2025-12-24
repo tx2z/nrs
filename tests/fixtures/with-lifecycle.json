@@ -1,0 +1,16 @@
+{
+  "name": "project-with-lifecycle",
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "echo 'Checking environment...'",
+    "postinstall": "husky install",
+    "prepublishOnly": "npm run build && npm test",
+    "prepare": "husky install",
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  }
+}

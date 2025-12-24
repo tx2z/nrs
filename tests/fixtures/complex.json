@@ -1,0 +1,45 @@
+{
+  "name": "@company/complex-app",
+  "version": "3.2.1",
+  "description": "A complex application with many scripts",
+  "packageManager": "pnpm@8.0.0",
+  "scripts": {
+    "//dev": "Development commands",
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:server": "nodemon src/server.ts",
+    "dev:client": "vite",
+
+    "// build": "Build commands for different environments",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build:docker": "docker build -t app .",
+
+    "//test": "Testing commands",
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=unit",
+    "test:integration": "jest --testPathPattern=integration",
+    "test:e2e": "playwright test",
+    "test:coverage": "jest --coverage",
+
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "husky install",
+    "prepare": "husky install"
+  },
+  "scripts-info": {
+    "dev": "Start all development servers concurrently",
+    "build": "Build the complete application",
+    "test": "Run the full test suite"
+  },
+  "ntl": {
+    "descriptions": {
+      "lint": "Check code quality with ESLint",
+      "format": "Format code with Prettier"
+    }
+  }
+}

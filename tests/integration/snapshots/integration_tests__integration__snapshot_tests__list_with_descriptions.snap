@@ -1,0 +1,12 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: normalized
+---
+Available scripts (npm):
+
+  build  vite build  Build for production
+  dev    vite  Start development server
+  lint   eslint .  Lint code
+  test   vitest  Run test suite
+
+4 scripts found

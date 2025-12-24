@@ -1,0 +1,5 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: stdout
+---
+Would run: npm run dev

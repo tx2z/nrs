@@ -1,0 +1,12 @@
+{
+  "name": "simple-app",
+  "version": "1.0.0",
+  "description": "A simple app for testing basic nrs functionality",
+  "scripts": {
+    "dev": "echo Starting dev server...",
+    "build": "echo Building project...",
+    "test": "echo Running tests...",
+    "lint": "echo Linting code...",
+    "format": "echo Formatting code..."
+  }
+}

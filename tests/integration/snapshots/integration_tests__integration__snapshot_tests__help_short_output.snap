@@ -1,0 +1,26 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: stdout
+---
+Fast interactive TUI for running npm scripts
+
+Usage: nrs [OPTIONS] [PATH]
+
+Arguments:
+  [PATH]  Path to project directory (default: current directory)
+
+Options:
+  -L, --last                 Rerun last executed script (no TUI)
+  -l, --list                 List scripts non-interactively (no TUI)
+  -e, --exclude <PATTERN>    Exclude scripts matching pattern (can be repeated)
+  -s, --sort <MODE>          Initial sort mode [possible values: recent, alpha, category]
+  -r, --runner <RUNNER>      Override package manager [possible values: npm, yarn, pnpm, bun]
+  -a, --args <ARGS>          Arguments to pass to the selected script
+  -n, --script <NAME>        Run script directly without TUI
+  -d, --dry-run              Show command without executing
+  -c, --config <PATH>        Path to config file
+      --no-config            Ignore config files
+      --debug                Enable debug output
+      --completions <SHELL>  Generate shell completions [possible values: bash, zsh, fish, powershell, elvish]
+  -h, --help                 Print help (see more with '--help')
+  -V, --version              Print version

@@ -1,0 +1,8 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: normalized
+---
+Error: Failed to parse scripts: Failed to parse package.json: key must be a string at line 1 column 3
+  at line 1, column 3:
+    { invalid json }
+      ^

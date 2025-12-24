@@ -1,0 +1,32 @@
+{
+  "name": "large-monorepo",
+  "version": "2.0.0",
+  "description": "A monorepo with many scripts for testing grid layout and filtering",
+  "scripts": {
+    "dev": "echo Starting dev server",
+    "dev:api": "echo Starting API server",
+    "dev:web": "echo Starting web server",
+    "dev:mobile": "echo Starting mobile server",
+    "build": "echo Building all packages",
+    "build:api": "echo Building API",
+    "build:web": "echo Building web",
+    "build:mobile": "echo Building mobile",
+    "build:prod": "echo Building for production",
+    "test": "echo Running all tests",
+    "test:unit": "echo Running unit tests",
+    "test:integration": "echo Running integration tests",
+    "test:e2e": "echo Running e2e tests",
+    "test:coverage": "echo Running tests with coverage",
+    "lint": "echo Linting all packages",
+    "lint:fix": "echo Fixing lint errors",
+    "format": "echo Formatting code",
+    "format:check": "echo Checking formatting",
+    "typecheck": "echo Type checking",
+    "clean": "echo Cleaning build artifacts",
+    "prepare": "echo Preparing husky",
+    "release": "echo Creating release",
+    "docs": "echo Generating docs",
+    "deploy": "echo Deploying to production",
+    "deploy:staging": "echo Deploying to staging"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "project-with-comments",
+  "version": "1.0.0",
+  "scripts": {
+    "//dev": "Start the development server",
+    "dev": "next dev",
+    "// build": "Build for production",
+    "build": "next build",
+    "//start//": "Start production server",
+    "start": "next start",
+    "lint": "next lint"
+  }
+}

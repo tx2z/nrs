@@ -1,0 +1,5 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: stderr
+---
+Error: No previous script found for this project. Run nrs first to execute a script.

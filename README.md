@@ -1,0 +1,342 @@
+# nrs - Node Run Scripts
+
+A fast, interactive TUI for running npm scripts.
+
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Rust](https://img.shields.io/badge/rust-1.70+-orange)
+
+<!-- TODO: Add demo GIF -->
+<!-- ![nrs demo](docs/demo.gif) -->
+
+## Features
+
+- **Fast** - Sub-50ms startup time (native Rust binary)
+- **Interactive** - Beautiful TUI with fuzzy search and keyboard navigation
+- **Smart** - Auto-detects your package manager (npm, yarn, pnpm, bun)
+- **Powerful** - Multi-select, history tracking, script descriptions
+- **Zero-config** - Works out of the box, optional config for power users
+
+## Quick Start
+
+```bash
+# Run in any Node.js project
+cd your-project
+nrs
+```
+
+Use arrow keys to navigate, `Enter` to run, or press `1-9` for quick selection.
+
+## Installation
+
+### From Source (Cargo)
+
+```bash
+cargo install --git https://github.com/tx2z/nrs
+```
+
+### Manual Build
+
+```bash
+git clone https://github.com/tx2z/nrs
+cd nrs
+cargo build --release
+cp target/release/nrs ~/.local/bin/
+```
+
+### Shell Completions
+
+Generate shell completions for your shell:
+
+```bash
+# Bash
+nrs --completions bash > ~/.local/share/bash-completion/completions/nrs
+
+# Zsh
+nrs --completions zsh > ~/.zfunc/_nrs
+
+# Fish
+nrs --completions fish > ~/.config/fish/completions/nrs.fish
+```
+
+## Usage
+
+### Basic Commands
+
+```bash
+# Launch interactive TUI
+nrs
+
+# Launch TUI for specific project
+nrs ./my-project
+
+# List scripts without TUI
+nrs --list
+
+# Run a specific script directly
+nrs -n dev
+
+# Rerun last executed script
+nrs --last
+
+# Run script with arguments
+nrs -n test --args "--watch --coverage"
+
+# Dry run (show command without executing)
+nrs -n build --dry-run
+```
+
+### Options
+
+```
+nrs [OPTIONS] [PATH]
+
+ARGUMENTS:
+  [PATH]    Path to project directory (default: current directory)
+
+OPTIONS:
+  -h, --help              Show help message
+  -V, --version           Show version
+  -L, --last              Rerun last executed script
+  -l, --list              List scripts non-interactively
+  -n, --script <NAME>     Run script directly without TUI
+  -a, --args <ARGS>       Arguments to pass to the script
+  -e, --exclude <PATTERN> Exclude scripts matching pattern (repeatable)
+  -s, --sort <MODE>       Sort mode: recent, alpha, category
+  -r, --runner <RUNNER>   Override package manager: npm, yarn, pnpm, bun
+  -d, --dry-run           Show command without executing
+  -c, --config <PATH>     Path to config file
+      --no-config         Ignore config files
+      --debug             Enable debug output
+      --completions <SHELL>  Generate shell completions
+```
+
+### Keyboard Shortcuts
+
+#### Navigation
+| Key | Action |
+|-----|--------|
+| `↑` / `k` | Move up |
+| `↓` / `j` | Move down |
+| `←` / `h` | Move left |
+| `→` / `l` | Move right |
+| `g` / `Home` | Go to first |
+| `G` / `End` | Go to last |
+
+#### Actions
+| Key | Action |
+|-----|--------|
+| `Enter` | Run selected script |
+| `1-9` | Quick run numbered script |
+| `a` | Add arguments |
+| `m` | Toggle multi-select |
+| `Space` | Toggle selection (multi-select) |
+
+#### Filtering & Sorting
+| Key | Action |
+|-----|--------|
+| `/` or type | Enter filter mode |
+| `Escape` | Clear filter |
+| `s` | Cycle sort mode |
+
+#### General
+| Key | Action |
+|-----|--------|
+| `q` / `Ctrl+C` | Quit |
+| `?` | Show help |
+
+## Configuration
+
+nrs works without configuration, but you can customize it with a config file.
+
+### Config File Locations
+
+1. `.nrsrc.toml` in project directory
+2. `~/.config/nrs/config.toml` (global)
+
+### Example Configuration
+
+```toml
+# ~/.config/nrs/config.toml
+
+[general]
+# Default package manager (overrides auto-detection)
+runner = "pnpm"
+
+# Default sort mode: "recent", "alpha", "category"
+default_sort = "recent"
+
+# Show command preview in description panel
+show_command_preview = true
+
+[appearance]
+# Show icons
+icons = true
+
+# Show help footer
+show_footer = true
+
+# Compact mode (less padding)
+compact = false
+
+[filter]
+# Search in descriptions too
+search_descriptions = true
+
+# Enable fuzzy matching
+fuzzy = true
+
+[history]
+# Enable history tracking
+enabled = true
+
+# Max projects to remember
+max_projects = 100
+
+# Max scripts per project
+max_scripts = 50
+
+[exclude]
+# Global patterns to exclude
+patterns = [
+  "pre*",
+  "post*",
+]
+
+[scripts]
+# Custom descriptions (override package.json)
+[scripts.descriptions]
+dev = "Start development server"
+build = "Build for production"
+
+# Script aliases
+[scripts.aliases]
+d = "dev"
+b = "build"
+t = "test"
+```
+
+### Project-Level Config
+
+Create `.nrsrc.toml` in your project root:
+
+```toml
+[general]
+runner = "yarn"
+
+[exclude]
+patterns = ["internal:*"]
+```
+
+## Package Manager Detection
+
+nrs automatically detects your package manager:
+
+1. `--runner` CLI flag (highest priority)
+2. `runner` in config file
+3. `packageManager` field in `package.json`
+4. Lock file detection:
+   - `bun.lockb` → bun
+   - `pnpm-lock.yaml` → pnpm
+   - `yarn.lock` → yarn
+   - `package-lock.json` → npm
+5. Fallback: npm
+
+## Script Descriptions
+
+nrs reads script descriptions from multiple sources:
+
+### scripts-info (recommended)
+
+```json
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "scripts-info": {
+    "dev": "Start development server",
+    "build": "Build for production"
+  }
+}
+```
+
+### ntl.descriptions
+
+```json
+{
+  "scripts": { "dev": "vite" },
+  "ntl": {
+    "descriptions": {
+      "dev": "Start development server"
+    }
+  }
+}
+```
+
+### Comment format
+
+```json
+{
+  "scripts": {
+    "//dev": "Start development server",
+    "dev": "vite"
+  }
+}
+```
+
+## Comparison with ntl
+
+| Feature | nrs | ntl |
+|---------|-----|-----|
+| Language | Rust | Node.js |
+| Startup time | ~30ms | ~300ms |
+| Binary | Yes | No (requires Node) |
+| Fuzzy search | Yes | Yes |
+| Multi-select | Yes | Yes |
+| History | Yes | Yes |
+| Configuration | Full TOML | Limited |
+| Package managers | npm, yarn, pnpm, bun | npm, yarn, pnpm |
+
+## Exit Codes
+
+| Code | Meaning |
+|------|---------|
+| 0 | Success |
+| 1 | General error |
+| 2 | No package.json found |
+| 3 | No scripts defined |
+| 4 | Script execution failed |
+| 5 | Invalid configuration |
+| 130 | Interrupted (Ctrl+C) |
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+### Development
+
+```bash
+# Clone the repository
+git clone https://github.com/tx2z/nrs
+cd nrs
+
+# Run tests
+cargo test
+
+# Run with debug output
+cargo run -- --debug
+
+# Build release
+cargo build --release
+```
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+## Acknowledgments
+
+- [ratatui](https://github.com/ratatui-org/ratatui) - TUI framework
+- [ntl](https://github.com/ruyadorno/ntl) - Inspiration for this project
+- [clap](https://github.com/clap-rs/clap) - CLI argument parsing

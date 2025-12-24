@@ -1,0 +1,8 @@
+---
+source: tests/integration/snapshot_tests.rs
+expression: stderr
+---
+error: invalid value 'invalid' for '--runner <RUNNER>'
+  [possible values: npm, yarn, pnpm, bun]
+
+For more information, try '--help'.
