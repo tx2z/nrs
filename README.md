@@ -34,7 +34,7 @@ Use arrow keys to navigate, `Enter` to run, or press `1-9` for quick selection.
 ### Homebrew (macOS & Linux) - Recommended
 
 ```bash
-brew install tx2z/tap/nrs
+brew install tx2z/tap/npm-run-scripts
 ```
 
 ### Cargo (Windows & all platforms)
