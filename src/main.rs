@@ -15,7 +15,9 @@ use npm_run_scripts::history::History;
 use npm_run_scripts::package::{detect_runner_reason, parse_scripts, Runner, Scripts};
 use npm_run_scripts::runner::execute_script;
 use npm_run_scripts::tui::{run_tui, App};
-use npm_run_scripts::utils::{find_project_root, global_config_file, history_file, local_config_file};
+use npm_run_scripts::utils::{
+    find_project_root, global_config_file, history_file, local_config_file,
+};
 
 fn main() -> ExitCode {
     match run() {
@@ -86,7 +88,8 @@ fn run() -> Result<i32> {
     let config = if cli.no_config {
         Config::default()
     } else {
-        npm_run_scripts::config::load_config(cli.config.as_deref(), &project_dir).unwrap_or_default()
+        npm_run_scripts::config::load_config(cli.config.as_deref(), &project_dir)
+            .unwrap_or_default()
     };
 
     // Combine config and CLI exclude patterns
